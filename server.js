@@ -6,6 +6,10 @@ app.get("/", (req,res) =>{
     res.json({result :"ok",data :[1,2,3,4,5]})
 })
 
+app.get("/test", (req,res) =>{
+    res.json({result :"ok",data :[1000,2000]})
+})
+
 app.listen(PORT,()=>{
     console.log(`Server is running ${PORT}`);
 })

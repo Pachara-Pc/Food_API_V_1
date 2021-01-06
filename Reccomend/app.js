@@ -8,5 +8,9 @@ const ratings = [
   ];
   
   
-  const result = recommend.cFilter(ratings, 2);
-  console.log(result);
+  const result = (x) => recommend.cFilter(ratings, x) ;
+  //console.log(result(1));
+
+  module.exports ={
+    result
+  };

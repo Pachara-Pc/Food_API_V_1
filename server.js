@@ -6,29 +6,76 @@ const PORT = process.env.PORT || 8080
 const rec = require('./Reccomend/app')
 
 const ofirebase = require("./firebase/setData")
+const ogetData = require("./firebase/getData")
 
+const request = require('request');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
+
 app.get("/", (req,res) =>{
     res.send('hello test ')
-})
-app.get("/test_1", (req,res) =>{
-    res.json({result :"ok",data :[1000,3000],data2:"sever ok"})
 })
 
 app.get('/test/:id',(req,res) =>{
     const index =  parseInt(req.params.id) ;
- 
-    res.json(rec.result(index))
+   
+    res.json(rec.result(dataSet,index))
 })
+
+app.get("/userData/",function(req,res){
+    ogetData.getData(function(data){
+        res.send(data)
+    })
+})
+
 
 app.post("/savedata/",function(req,res){
     ofirebase.saveData(req.body,function(err,data){
-            res.send(data);
+            res.json(data);
     })
 })
 
 app.listen(PORT,()=>{
     console.log(`Server is running ${PORT}`);
 })
+const dataSet = []
+
+
+
+function obj(x){
+   
+    Object.entries(x).forEach(([key,value])=>{
+      let user = []
+      Object.entries(value.histrory).forEach(([key,value])=>{
+  
+        user.push(value);
+       
+  
+      })
+     // console.log(user);
+     dataSet.push(user)
+     //console.log(dataSet);
+    })
+    
+    
+    
+    
+  }
+
+  
+  function setData (){
+  
+  
+    request('https://arhanthai-4ab28-default-rtdb.firebaseio.com/user/.json', function (error, response, body) {
+  
+      let list = JSON.parse(body)
+        obj(list)
+       
+    }); 
+  
+    
+  }
+  
+
+setData()

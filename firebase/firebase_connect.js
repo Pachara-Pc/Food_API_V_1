@@ -2,13 +2,13 @@
 
     const app =firebase.initializeApp( {
       
-      apiKey: "AIzaSyC6NHUHlHm1YDCQqhvzjxHdqLxnXK5suwA",
-      authDomain: "food-69e43.firebaseapp.com",
-      databaseURL: "https://food-69e43-default-rtdb.firebaseio.com",
-      projectId: "food-69e43",
-      storageBucket: "food-69e43.appspot.com",
-      messagingSenderId: "312563104598",
-      appId: "1:312563104598:web:b2b564a915e0ac88bf74f7"
+      apiKey: "AIzaSyCzqwjpA47F-KPVKfNIhd-YaO1TCYao_UA",
+    authDomain: "arhanthai-4ab28.firebaseapp.com",
+    databaseURL: "https://arhanthai-4ab28-default-rtdb.firebaseio.com",
+    projectId: "arhanthai-4ab28",
+    storageBucket: "arhanthai-4ab28.appspot.com",
+    messagingSenderId: "1093224246746",
+    appId: "1:1093224246746:web:59d7a47c5e7b3a767364e3",
     
     /*
 

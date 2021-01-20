@@ -1,1 +1,0 @@
-const rec = require('./app')

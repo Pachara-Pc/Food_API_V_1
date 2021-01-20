@@ -42,7 +42,6 @@ app.listen(PORT,()=>{
 const dataSet = []
 
 
-
 function obj(x){
    
     Object.entries(x).forEach(([key,value])=>{
@@ -55,7 +54,7 @@ function obj(x){
       })
      // console.log(user);
      dataSet.push(user)
-     //console.log(dataSet);
+     console.log(dataSet);
     })
     
     
@@ -68,8 +67,9 @@ function obj(x){
   
   
     request('https://arhanthai-4ab28-default-rtdb.firebaseio.com/user/.json', function (error, response, body) {
-  
+
       let list = JSON.parse(body)
+      console.log(list);
         obj(list)
        
     }); 

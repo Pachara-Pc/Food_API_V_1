@@ -9,6 +9,7 @@ const ofirebase = require("./firebase/setData")
 const ogetData = require("./firebase/getData")
 
 const request = require('request');
+var dataSet = []
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
@@ -21,6 +22,8 @@ app.get('/test/:id',(req,res) =>{
     const index =  parseInt(req.params.id) ;
    
     res.json(rec.result(dataSet,index))
+
+    //console.log(dataSet);
 })
 
 app.get("/userData/",function(req,res){
@@ -39,7 +42,7 @@ app.post("/savedata/",function(req,res){
 app.listen(PORT,()=>{
     console.log(`Server is running ${PORT}`);
 })
-const dataSet = []
+
 
 
 function obj(x){
@@ -58,7 +61,7 @@ function obj(x){
     })
     
     
-    
+   // console.log(dataSet);
     
   }
 
@@ -76,6 +79,6 @@ function obj(x){
   
     
   }
-  
+ 
 
 setData()

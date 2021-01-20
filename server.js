@@ -45,40 +45,40 @@ app.listen(PORT,()=>{
 
 
 
-function obj(x){
+// function obj(x){
    
-    Object.entries(x).forEach(([key,value])=>{
-      let user = []
-      Object.entries(value.histrory).forEach(([key,value])=>{
+//     Object.entries(x).forEach(([key,value])=>{
+//       let user = []
+//       Object.entries(value.histrory).forEach(([key,value])=>{
   
-        user.push(value);
+//         user.push(value);
        
   
-      })
-     // console.log(user);
-     dataSet.push(user)
-     //console.log(dataSet);
-    })
+//       })
+//      // console.log(user);
+//      dataSet.push(user)
+//      //console.log(dataSet);
+//     })
     
     
-   // console.log(dataSet);
+//    // console.log(dataSet);
     
-  }
+//   }
 
   
-  function setData (){
+//   function setData (){
   
   
-    request('https://arhanthai-4ab28-default-rtdb.firebaseio.com/user/.json', function (error, response, body) {
+//     request('https://arhanthai-4ab28-default-rtdb.firebaseio.com/user/.json', function (error, response, body) {
 
-      let list = JSON.parse(body)
-      //console.log(list);
-        obj(list)
+//       let list = JSON.parse(body)
+//       //console.log(list);
+//         obj(list)
        
-    }); 
+//     }); 
   
     
-  }
+//   }
  
 
-//setData()
+// setData()
